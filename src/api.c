@@ -371,7 +371,7 @@ int llhttp__on_chunk_complete(llhttp_t* s, const char* p, const char* endp) {
 
 /* Private */
 
-
+#if defined (stderr)
 void llhttp__debug(llhttp_t* s, const char* p, const char* endp,
                    const char* msg) {
   if (p == endp) {
@@ -382,3 +382,4 @@ void llhttp__debug(llhttp_t* s, const char* p, const char* endp,
             s->type, s->flags, *p, msg);
   }
 }
+#endif
